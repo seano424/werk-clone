@@ -14,7 +14,7 @@ export default function Navbar(props: Props) {
 
   return (
     <>
-      <nav className="fixed w-full h-20 inset-0 mt-2 max-w-xs md:max-w-3xl mx-auto bg-black flex justify-between items-center px-10 rounded-2xl text-white z-20">
+      <nav className="fixed w-full h-20 inset-0 mt-2 max-w-xs md:max-w-3xl mx-auto bg-dark flex justify-between items-center px-10 rounded-2xl text-light-gray z-20">
         <ul className="flex items-center">
           <li className="flex items-center gap-2 text-4xl font-extrabold">
             <span className="max-w-sm">{title}</span>

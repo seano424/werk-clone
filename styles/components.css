@@ -14,18 +14,18 @@
   }
 
   .h1 {
-    @apply text-7xl font-extrabold xl:text-8xl;
+    @apply text-5xl font-extrabold xl:text-8xl;
   }
 
   .p {
-    @apply text-4xl font-extrabold xl:text-5xl max-w-xl;
+    @apply text-4xl font-extrabold xl:text-5xl;
   }
 
   .page-padding {
-    @apply pt-56 pb-8;
+    @apply pt-40 pb-8;
   }
   
   .button {
-    @apply bg-white text-black rounded-2xl p-3;
+    @apply bg-light-gray text-dark rounded-2xl p-3;
   }
 }
