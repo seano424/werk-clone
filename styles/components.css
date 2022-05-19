@@ -5,7 +5,7 @@
   }
 
   .card {
-    @apply shadow-lg rounded-md p-5 tracking-widest leading-loose;
+    @apply rounded-2xl bg-dark text-light-gray py-base p-2;
   }
 
   .footer {
@@ -17,15 +17,19 @@
     @apply text-5xl font-extrabold xl:text-8xl;
   }
 
+  .h2 {
+    @apply text-2xl font-bold;
+  }
+
   .p {
-    @apply text-4xl font-extrabold xl:text-5xl;
+    @apply text-base font-light xl:text-2xl;
   }
 
   .page-padding {
-    @apply pt-40 pb-8;
+    @apply pt-24 pb-8;
   }
   
   .button {
-    @apply bg-light-gray text-dark rounded-2xl p-3;
+    @apply bg-light-gray text-dark rounded-full p-3;
   }
 }
