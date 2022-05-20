@@ -10,15 +10,17 @@ module.exports = {
         gambarino: '"Gambarino", serif',
       },
       colors: {
+        white: '#FFFFFF',
         green: '#A9FF7F',
-        'light-gray': '#FFFFFF',
+        'light-gray': '#F1F4F6',
         'medium-gray': '#8A8A8E',
+        'dark-gray': '#383838',
         dark: '#1D1D1F',
       },
     },
     container: {
       center: false,
-      padding: '1rem',
+      padding: '0.5rem',
     },
     debugScreens: {
       position: ['bottom', 'right'],

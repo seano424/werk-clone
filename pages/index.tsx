@@ -1,8 +1,12 @@
 import { useEffect } from 'react'
-import Layout from '@/components/Layout'
-import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import type { NextPage } from 'next'
+import { ArrowDownIcon } from '@heroicons/react/solid'
+import { scroller, Element } from 'react-scroll'
+
+import Layout from '@/components/Layout'
+import Hero from '@/components/Hero'
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -11,130 +15,214 @@ const Home: NextPage = () => {
     return () => console.log('Cleaning up')
   }, [])
 
+  const scrollTo = (name: string) => {
+    scroller.scrollTo(name, {
+      duration: 1200,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+    })
+  }
+
   return (
     <Layout title="werk">
-      <div className="page-padding container">
-        <div className="card grid gap-3">
-          <h1 className="h1 tracking-tighter">
-            Async first collaboration for remote teams.
-          </h1>
-          <h1 className="h1 text-green">
-            {' '}
-            Async Records. Live Voice. Chat. Task. HyperDocs. And more.
-          </h1>
-          <div className="flex justify-center my-2">
-            <svg
-              width="250"
-              height="54"
-              viewBox="0 0 250 54"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                <g transform="translate(-130.000000, -73.000000)">
-                  <g transform="translate(130.000000, 73.000000)">
-                    <rect
-                      stroke="#EA532A"
-                      strokeWidth="2"
-                      fill="#FFFFFF"
-                      x="0.5"
-                      y="0.5"
-                      width="249"
-                      height="53"
-                      rx="10"
-                    ></rect>
-                    <text
-                      fontFamily="Helvetica-Bold, Helvetica"
-                      fontSize="9"
-                      fontWeight="bold"
-                      fill="#EA532A"
-                    >
-                      <tspan x="53" y="20">
-                        PRODUCT HUNT
-                      </tspan>
-                    </text>
-                    <text
-                      fontFamily="Helvetica-Bold, Helvetica"
-                      fontSize="16"
-                      fontWeight="bold"
-                      fill="#EA532A"
-                    >
-                      <tspan x="52" y="40">
-                        #3 Product of the Day
-                      </tspan>
-                    </text>
+      <main className="page-padding container mx-auto">
+        <Hero />
 
-                    <g transform="translate(17.000000, 13.000000)">
-                      <path
-                        d="M4.33,16.364 L0.328,24.9 C0.202,25.158 0.335,25.32 0.755,25.24 L4.013,24.532 C4.07755234,24.5094173 4.14861896,24.5149617 4.20888789,24.5472826 C4.26915683,24.5796035 4.31309537,24.6357337 4.33,24.702 L5.797,27.709 C5.937,28.033 6.099,28.099 6.225,27.842 L10.485,18.908 L4.33,16.364 Z M16.67,16.364 L20.672,24.9 C20.805,25.158 20.665,25.32 20.245,25.24 L16.987,24.532 C16.9224353,24.5100506 16.8516562,24.5158869 16.7915589,24.5481157 C16.7314616,24.5803445 16.687439,24.6360738 16.67,24.702 L15.203,27.709 C15.063,28.033 14.908,28.099 14.775,27.842 L10.515,18.908 L16.67,16.364 Z"
-                        fill="#DE7818"
-                        fillRule="nonzero"
-                      ></path>
-                      <path
-                        d="M9.298,21.392 C9.298,21.399 9.284,21.392 9.269,21.392 C7.03578049,21.1442528 4.94208026,20.1826237 3.299,18.65 C3.291,18.642 3.269,18.635 3.276,18.627 L3.46,18.237 C3.468,18.222 3.482,18.259 3.49,18.267 C5.067,19.733 7.257,20.655 9.497,20.927 C9.505,20.927 9.52,20.927 9.52,20.935 L9.298,21.392 Z"
-                        fill="#B35454"
-                      ></path>
-                      <circle
-                        fill="#A54E24"
-                        cx="10.5"
-                        cy="10.489"
-                        r="10.489"
-                      ></circle>
-                      <circle
-                        fill="#A76236"
-                        cx="10.5"
-                        cy="10.489"
-                        r="9.045"
-                      ></circle>
-                      <circle
-                        fill="#BD6E3C"
-                        cx="10.75"
-                        cy="10.75"
-                        r="8.75"
-                      ></circle>
-                      <path
-                        d="M9.35,11.404 L10.387,11.404 C11.207,11.404 11.705,11.802 11.705,12.452 C11.705,13.085 11.178,13.519 10.416,13.519 C9.602,13.519 9.08,13.12 9.051,12.476 L7,12.476 C7.076,14.134 8.406,15.212 10.38,15.212 C12.45,15.212 13.89,14.146 13.89,12.616 C13.89,11.526 13.146,10.759 11.98,10.636 L11.98,10.525 C12.93,10.349 13.58,9.581 13.58,8.609 C13.58,7.243 12.291,6.3 10.416,6.3 C8.453,6.3 7.188,7.355 7.158,9.007 L9.11,9.007 C9.134,8.345 9.632,7.905 10.37,7.905 C11.12,7.905 11.583,8.286 11.583,8.902 C11.583,9.517 11.108,9.922 10.388,9.922 L9.35,9.922 L9.35,11.404 Z"
-                        fill="#FFC07A"
-                      ></path>
-                      <path
-                        d="M12.97,3.089 C16.3260745,3.89113363 18.7213186,6.85251327 18.8041673,10.3021205 C18.8870161,13.7517278 16.6366978,16.8246793 13.323,17.787 C15.358,16.232 16.707,13.578 16.707,10.563 C16.707,7.379 15.203,4.6 12.969,3.089 L12.97,3.089 Z"
-                        fillOpacity="0.2"
-                        fill="#FFFFFF"
-                        opacity="0.618"
-                      ></path>
-                      <path
-                        d="M11.702,21.392 C11.709,21.399 11.724,21.392 11.731,21.392 C14.024,21.104 16.131,20.182 17.717,18.664 C17.724,18.657 17.746,18.65 17.739,18.642 L17.554,18.252 C17.547,18.237 17.532,18.274 17.524,18.281 C15.947,19.748 13.751,20.655 11.503,20.927 C11.495,20.927 11.48,20.927 11.48,20.935 L11.702,21.392 Z"
-                        fill="#B35454"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg>
+        <section className="card bg-white text-dark grid gap-3">
+          <h2 className="h2">Everything you need for the remote work.</h2>
+          <h2 className="h2 text-medium-gray">For remote, by remote!</h2>
+          <p className="p">
+            Werk is designed and developed to help you in your remote or hybrid
+            working journey. You can collaborate and communicate in Werk
+            seamlessly, easily.
+          </p>
+        </section>
+
+        <section className="card gri gap-3">
+          <h2 className="h2">We know you are struggling with</h2>
+          <div className="card bg-dark-gray my-base">
+            <div className="bg-dark w-max p-4 rounded-3xl mb-8">
+              <span className="h1">🤦‍♂️</span>
+            </div>
+            <h3 className="h3 mb-2">Zoom Fatigue</h3>
+            <p className="p text-medium-gray">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id illum
+              sed praesentium eligendi fuga repellat temporibus nam minima
+              harum. Quisquam!
+            </p>
+          </div>
+          <div className="card bg-dark-gray my-base">
+            <div className="bg-dark w-max p-4 rounded-2xl mb-8">
+              <span className="h1">😤</span>
+            </div>
+            <h3 className="h3 mb-2">Using too many tools</h3>
+            <p className="p text-medium-gray">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id illum
+              sed praesentium eligendi fuga repellat temporibus nam minima
+              harum. Quisquam!
+            </p>
+          </div>
+          <div className="card bg-dark-gray my-base">
+            <div className="bg-dark w-max p-4 rounded-3xl mb-8">
+              <span className="h1">💸</span>
+            </div>
+            <h3 className="h3 mb-2">Cost of the tools</h3>
+            <p className="p text-medium-gray">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id illum
+              sed praesentium eligendi fuga repellat temporibus nam minima
+              harum. Quisquam!
+            </p>
+          </div>
+          <p className="text-center px-10 p text-light-gray">
+            See how we are solving these and empower remote teams
+          </p>
+
+          <a
+            onClick={() => scrollTo('next')}
+            className="bg-dark-gray flex p-4 w-max rounded-2xl mx-auto my-4 cursor-pointer"
+          >
+            <ArrowDownIcon className="w-4" />
+          </a>
+        </section>
+
+        <Element name="next" className="bg-white card my-4">
+          <p className="p text-medium-gray text-2xl mb-2">Features.</p>
+          <h2 className="h2 text-dark">Sneak peek to Werk.</h2>
+        </Element>
+
+        <section className="card my-4 bg-green text-dark grid gap-3">
+          <h2 className="h2">Records</h2>
+          <p className="text-medium-gray p">
+            We know... Getting sync for every issue is hard.{' '}
+            <span className="text-dark">
+              But, you can asynchronously collaborate on Werk via Async Records
+              feature!
+            </span>
+          </p>
+          <div className="relative h-80 w-full">
+            <Image
+              src="https://www.usewerk.com/images/Group-42397-p-800.png"
+              alt="Video Image"
+              layout="fill"
+              className="object-contain rounded-2xl"
+            />
           </div>
           <Link href="/">
-            <a className="button bg-green text-dark text-center h2 w-5/6 mx-auto rounded-2xl">
-              Get started free
+            <a className="button text-center h3 bg-dark text-light-gray mb-4">
+              Get Started
             </a>
           </Link>
-          <p className='p text-center'>1000+ team using Werk already!</p>
-          <div className='p-8 relative'>
-            <div className='relative h-40 w-full'>
-              <Image
-                src="https://www.usewerk.com/images/Group-42397-p-800.png"
-                alt="Video Image"
-                layout="fill"
-                className="object-cover"
-              />
-            </div>
-            <div className='inset-0 absolute flex justify-center items-center'>
-              <Link href="/">
-                <a className='button bg-green/80 font-bold text-lg px-5'>Watch the film</a>
-              </Link>
-            </div>
+        </section>
+
+        <section className="card my-4 bg-light-gray shadow-md text-dark grid gap-3">
+          <h3 className="h3">Thread</h3>
+          <p className="p">
+            Never miss your convesation with thread chat. Also share files,
+            hyperdocs and more.
+          </p>
+          <div className="relative h-80 w-full">
+            <Image
+              src="https://www.usewerk.com/images/91338fbb68728ace4b07a5c5b46d01b5.png"
+              alt="Video Image"
+              layout="fill"
+              className="object-contain rounded-2xl"
+            />
           </div>
-        </div>
-      </div>
+        </section>
+
+        <section className="card mt-4 bg-dark grid gap-3">
+          <h3 className="h3 text-light-gray">Task Manager</h3>
+          <p className="p text-green">
+            Not only simplest ever, but also super customizable.
+          </p>
+          <p className="p text-medium-gray">
+            Manage your tasks with Werk's task manager. Never miss your
+            convesation with thread chat. Also share files, hyperdocs and more.
+          </p>
+          <div className="relative h-80 w-full">
+            <Image
+              src="https://www.usewerk.com/images/8782a714c044cbc069c958c86cbbbb86-p-1080.png"
+              alt="Video Image"
+              layout="fill"
+              className="object-contain rounded-2xl"
+            />
+          </div>
+        </section>
+
+        <section className="card bg-green text-dark grid gap-3">
+          <h2 className="h2">Voice Chat</h2>
+          <p className="text-dark p">
+            We know... Getting sync for every issue is hard.{' '}
+            <span className="text-medium-gray">
+              But, you can asynchronously collaborate on Werk via Async Records
+              feature!
+            </span>
+          </p>
+          <div className="relative h-80 w-full">
+            <Image
+              src="https://www.usewerk.com/images/Screen-Shot-2022-05-03-at-22.17-2-p-1080.png"
+              alt="Video Image"
+              layout="fill"
+              className="object-contain rounded-2xl"
+            />
+          </div>
+          <Link href="/">
+            <a className="button text-center h3 bg-dark text-light-gray mb-4">
+              Get Started
+            </a>
+          </Link>
+        </section>
+
+        <section className="bg-white card my-4">
+          <p className="p text-medium-gray text-2xl mb-2">Is it over? No!</p>
+          <h2 className="h2 text-dark">
+            The lasts but not the leasts from Werk
+          </h2>
+        </section>
+
+        <section className="card bg-dark grid gap-3">
+          <h2 className="h2 text-green">Voice Chat</h2>
+          <p className="text-light-gray p">
+            We know... Getting sync for every issue is hard.{' '}
+            <span className="text-medium-gray">
+              But, you can asynchronously collaborate on Werk via Async Records
+              feature!
+            </span>
+          </p>
+          <div className="relative h-80 w-full">
+            <Image
+              src="https://www.usewerk.com/images/hyperdocssss-1.png"
+              alt="Video Image"
+              layout="fill"
+              className="object-contain rounded-2xl"
+            />
+          </div>
+        </section>
+
+        <section className="card bg-light-gray text-dark grid gap-3">
+          <h2 className="h2">Voice Chat</h2>
+          <p className="p">
+            We know... Getting sync for every issue is hard.{' '}
+            <span className="text-medium-gray">
+              But, you can asynchronously collaborate on Werk via Async Records
+              feature!
+            </span>
+          </p>
+          <div className="relative h-20 w-full">
+            <Image
+              src="https://www.usewerk.com/images/werk-downloads.png"
+              alt="Video Image"
+              layout="fill"
+              className="object-contain rounded-2xl"
+            />
+          </div>
+          <Link href="/">
+            <a className="button text-center h3 border-2 border-dark mb-4">
+              Go to Downloads
+            </a>
+          </Link>
+        </section>
+      </main>
     </Layout>
   )
 }
