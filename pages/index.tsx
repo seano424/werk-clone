@@ -25,7 +25,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout title="werk">
-      <main className="page-padding container mx-auto">
+      <div className="page-padding mx-auto">
         <Hero />
         <section className="lg:max-w-6xl lg:mx-auto">
           <section className="card bg-white text-dark grid gap-3">
@@ -275,7 +275,7 @@ const Home: NextPage = () => {
 
           </section>
         </section>
-      </main>
+      </div>
     </Layout>
   )
 }

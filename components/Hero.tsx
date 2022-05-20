@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="card grid gap-3">
+    <section className="card grid gap-3 lg:pt-28">
       <h1 className="h1 tracking-tighter">
         Async first collaboration for remote teams.
       </h1>

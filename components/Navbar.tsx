@@ -6,29 +6,43 @@ interface Props {
   title?: string
 }
 
+const navigation = [
+  { link: '/', title: 'Features' },
+  { link: '/', title: 'Pricing' },
+  { link: '/', title: 'Download' },
+  { link: '/', title: 'Roadmap' },
+  { link: '/', title: 'Blog' },
+  { link: '/', title: 'Login' },
+]
+
 export default function Navbar(props: Props) {
   const { title } = props
 
   const [isMobileNavigationOpen, setIsMobileNavigationOpen] = useState(false)
 
   return (
-    <nav className='select-none'>
+    <nav className="select-none">
       <div className="fixed h-20 inset-0 text-light-gray z-20 flex container mx-auto mt-2">
-        <div className="flex justify-between w-full items-center bg-dark container rounded-2xl px-4">
+        <div className="flex justify-between w-full items-center bg-dark container rounded-2xl px-4 lg:w-4/6 lg:mx-auto">
           <Link href="/" className="flex items-center">
             <a className="flex items-center gap-2 h1 lg:text-3xl">
               <span className="max-w-sm">{title}</span>
               <span className="text-yellow-200">.</span>
             </a>
           </Link>
-          <ul className="items-center gap-4 hidden lg:flex">
-            <li>About</li>
-            <li>News</li>
-            <li className="border border-black px-4 py-2 rounded-full">
-              Get the app
+          <ul className="items-center gap-4 hidden xl:flex">
+            {navigation.map((item) => (
+              <Link key={item.title} href={item.link}>
+                <a className="hover:text-green text-white">
+                  {item.title}
+                </a>
+              </Link>
+            ))}
+            <li className="border border-green px-4 py-2 rounded-full bg-green text-black flex">
+              Get started
             </li>
           </ul>
-          <ul className='flex lg:hidden'>
+          <ul className="flex xl:hidden">
             <MenuIcon
               onClick={() => setIsMobileNavigationOpen(!isMobileNavigationOpen)}
               className="text-white w-7 cursor-pointer"
@@ -42,7 +56,7 @@ export default function Navbar(props: Props) {
             initial={{ opacity: 0, y: -400 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -400 }}
-            className="fixed right-4 md:right-12 top-28 z-10"
+            className="fixed right-4 md:right-12 lg:right-64 top-28 z-10"
           >
             <div className="flex flex-col gap-2 items-end">
               <div className="flex">

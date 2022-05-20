@@ -78,7 +78,7 @@ export default function Example() {
     <footer className="bg-white">
       <div className="py-12">
         <nav
-          className="-mx-5 -my-2 flex flex-wrap justify-center"
+          className="flex flex-wrap justify-center"
           aria-label="Footer"
         >
           {navigation.main.map((item) => (

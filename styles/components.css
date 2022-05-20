@@ -30,7 +30,7 @@
   }
 
   .page-padding {
-    @apply pt-24 pb-8;
+    @apply pt-24 pb-8 lg:pt-0;
   }
   
   .button {
