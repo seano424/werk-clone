@@ -5,7 +5,7 @@
   }
 
   .card {
-    @apply rounded-2xl bg-dark text-light-gray py-base p-4;
+    @apply rounded-2xl bg-dark text-light-gray py-base p-4 lg:py-10;
   }
 
   .footer {
@@ -34,6 +34,6 @@
   }
   
   .button {
-    @apply bg-light-gray text-dark rounded-full p-3;
+    @apply bg-light-gray text-dark rounded-2xl p-3;
   }
 }

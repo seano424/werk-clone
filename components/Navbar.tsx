@@ -16,7 +16,7 @@ export default function Navbar(props: Props) {
       <div className="fixed h-20 inset-0 text-light-gray z-20 flex container mx-auto mt-2">
         <div className="flex justify-between w-full items-center bg-dark container rounded-2xl px-4">
           <Link href="/" className="flex items-center">
-            <a className="flex items-center gap-2 h1">
+            <a className="flex items-center gap-2 h1 lg:text-3xl">
               <span className="max-w-sm">{title}</span>
               <span className="text-yellow-200">.</span>
             </a>
